@@ -6,64 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <style>
-        html, body {
-            height: 100%;
-            overflow-y: scroll;
-            scroll-snap-type: y mandatory;
-        }
-
-        #wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100vw;
-        }
-
-        .panel {
-            min-height: 100vh;
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            scroll-snap-align: start;
-            overflow: hidden;
-        }
-
-        .carousel-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            width: 100vw;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-        }
-
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .carousel {
-            display: flex;
-            flex: none;
-            width: 400vw;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            flex: none;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
 </head>
 <body class="is-preload">
     <div id="page-wrapper">
         <div id="wrapper">
-            <!-- Panel (Banner) -->
+            <!-- Intro Panel -->
             <section class="panel banner right">
                 <div class="content color0 span-3-75">
                     <h1 class="major">Why Hire Pepe Sánchez?</h1>
@@ -73,7 +20,7 @@
             
             <!-- Case Study 1 -->
             <section class="panel" id="case1">
-                <div class="carousel-container" id="carousel1">
+                <div class="carousel-container">
                     <div class="carousel">
                         <div class="slide">
                             <h2 class="major">See Like a Bee</h2>
@@ -99,7 +46,7 @@
 
             <!-- Case Study 2 -->
             <section class="panel" id="case2">
-                <div class="carousel-container" id="carousel2">
+                <div class="carousel-container">
                     <div class="carousel">
                         <div class="slide">
                             <h2 class="major">Rediscover Germany</h2>
@@ -125,7 +72,7 @@
 
             <!-- Case Study 3 -->
             <section class="panel" id="case3">
-                <div class="carousel-container" id="carousel3">
+                <div class="carousel-container">
                     <div class="carousel">
                         <div class="slide">
                             <h2 class="major">Tested by the Internet</h2>
