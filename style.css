@@ -1,78 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pepe Sánchez - Strategist Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="portfolio-container">
-        <div class="section">
-            <h1>Why Hire Pepe Sánchez?</h1>
-            <p style="font-size: 1.5em;">Swipe through to see the work.</p>
-        </div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        <!-- Case Study 1 Carousel -->
-        <div class="carousel">
-            <div class="slide">
-                <h2>See Like a Bee</h2>
-                <div class="video-container">
-                    <iframe allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' frameborder='0' src="https://www.youtube.com/embed/Vnza9eTTSVU" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="slide">
-                <h2>Challenge</h2>
-                <p class="text">Bees see flowers differently than humans. How can we help gardeners plant the most attractive flowers?</p>
-            </div>
-            <div class="slide">
-                <h2>Strategy & Results</h2>
-                <p class="text">On World Bee Day, we created an Instagram filter simulating the bee color spectrum. Over 110K flower buyers used it.</p>
-            </div>
-        </div>
+body {
+    background-color: #0d0d0d;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
 
-        <!-- Case Study 2 Carousel -->
-        <div class="carousel">
-            <div class="slide">
-                <h2>Rediscover Germany</h2>
-                <div class="video-container">
-                    <iframe allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' frameborder='0' allowfullscreen src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="slide">
-                <h2>Challenge</h2>
-                <p class="text">Summer 2020. A global pandemic disrupts global travel. Millions cancel their plans.</p>
-            </div>
-            <div class="slide">
-                <h2>Strategy & Results</h2>
-                <p class="text">We positioned Deutsche Bahn as the best travel alternative, increasing its popularity ranking by 10 points.</p>
-            </div>
-        </div>
+.portfolio-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        <!-- Case Study 3 Carousel -->
-        <div class="carousel">
-            <div class="slide">
-                <h2>Tested by the Internet</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/oikKaTDFu3M" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="slide">
-                <h2>Challenge</h2>
-                <p class="text">Bosch is Invented for Life, not just for labs. How can they prove they’re ready for life’s hardest curveballs?</p>
-            </div>
-            <div class="slide">
-                <h2>Strategy & Results</h2>
-                <p class="text">Over 50K submissions turned into real-world tests, reaching new audiences Bosch had never engaged before.</p>
-            </div>
-        </div>
+.section {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    border-bottom: 2px solid #222;
+    text-align: center;
+    position: relative;
+}
 
-        <!-- Final CTA -->
-        <div class="section">
-            <h2>Let's Talk Strategy</h2>
-            <p class="cta">📩 Contact: your.email@example.com</p>
-            <p class="cta">💼 LinkedIn: <a href="#" style="color: yellow; font-weight: bold;">Connect Here</a></p>
-        </div>
-    </div>
-</body>
-</html>
+.carousel {
+    display: flex;
+    width: 100vw;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.slide {
+    flex: none;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+    transition: transform 0.5s ease-in-out;
+    padding: 40px;
+}
+
+.video-container {
+    width: 90vw;
+    max-width: 800px;
+    height: 50vh;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.text {
+    font-size: 2em;
+    margin-top: 20px;
+    max-width: 800px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.cta {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .text { font-size: 1.5em; }
+    h1 { font-size: 3em; }
+    h2 { font-size: 2.5em; }
+}
