@@ -6,6 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            width: 100vw;
+            scroll-behavior: smooth;
+        }
+
+        .carousel {
+            display: flex;
+            flex: none;
+            width: 400vw;
+        }
+
+        .slide {
+            flex: none;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .panel {
+            scroll-snap-align: start;
+        }
+    </style>
 </head>
 <body class="is-preload">
     <div id="page-wrapper">
@@ -14,64 +42,85 @@
             <section class="panel banner right">
                 <div class="content color0 span-3-75">
                     <h1 class="major">Why Hire Pepe Sánchez?</h1>
-                    <p>Swipe through to see the work.</p>
-                    <ul class="actions">
-                        <li><a href="#case1" class="button primary color1 circle icon solid fa-angle-right">Next</a></li>
-                    </ul>
-                </div>
-                <div class="image filtered span-1-75" data-position="25% 25%">
-                    <img src="images/profile.jpg" alt="Pepe Sánchez" />
+                    <p>Swipe down to explore, swipe right for case details.</p>
                 </div>
             </section>
             
             <!-- Case Study 1 -->
-            <section class="panel spotlight medium right" id="case1">
-                <div class="content span-7">
-                    <h2 class="major">See Like a Bee</h2>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/Vnza9eTTSVU" allowfullscreen></iframe>
+            <section class="panel" id="case1">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="slide">
+                            <h2 class="major">See Like a Bee</h2>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/Vnza9eTTSVU" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <h3>Challenge</h3>
+                            <p>Bees see flowers differently than humans. How can we help gardeners plant the most attractive flowers?</p>
+                        </div>
+                        <div class="slide">
+                            <h3>Strategy</h3>
+                            <p>We created an Instagram filter simulating the bee color spectrum.</p>
+                        </div>
+                        <div class="slide">
+                            <h3>Result</h3>
+                            <p>Over 110K flower buyers used it.</p>
+                        </div>
                     </div>
-                    <h3>Challenge</h3>
-                    <p>Bees see flowers differently than humans. How can we help gardeners plant the most attractive flowers?</p>
-                    <h3>Strategy & Results</h3>
-                    <p>On World Bee Day, we created an Instagram filter simulating the bee color spectrum. Over 110K flower buyers used it.</p>
-                </div>
-                <div class="image filtered tinted" data-position="top left">
-                    <img src="images/bee.jpg" alt="See Like a Bee" />
                 </div>
             </section>
 
             <!-- Case Study 2 -->
-            <section class="panel spotlight medium left" id="case2">
-                <div class="content span-7">
-                    <h2 class="major">Rediscover Germany</h2>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
+            <section class="panel" id="case2">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="slide">
+                            <h2 class="major">Rediscover Germany</h2>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <h3>Challenge</h3>
+                            <p>Summer 2020. A global pandemic disrupts global travel. Millions cancel their plans.</p>
+                        </div>
+                        <div class="slide">
+                            <h3>Strategy</h3>
+                            <p>We positioned Deutsche Bahn as the best alternative.</p>
+                        </div>
+                        <div class="slide">
+                            <h3>Result</h3>
+                            <p>Increased brand ranking by 10 points.</p>
+                        </div>
                     </div>
-                    <h3>Challenge</h3>
-                    <p>Summer 2020. A global pandemic disrupts global travel. Millions cancel their plans.</p>
-                    <h3>Strategy & Results</h3>
-                    <p>We positioned Deutsche Bahn as the best travel alternative, increasing its popularity ranking by 10 points.</p>
-                </div>
-                <div class="image filtered tinted" data-position="top right">
-                    <img src="images/train.jpg" alt="Rediscover Germany" />
                 </div>
             </section>
 
             <!-- Case Study 3 -->
-            <section class="panel spotlight medium right" id="case3">
-                <div class="content span-7">
-                    <h2 class="major">Tested by the Internet</h2>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/oikKaTDFu3M" allowfullscreen></iframe>
+            <section class="panel" id="case3">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="slide">
+                            <h2 class="major">Tested by the Internet</h2>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/oikKaTDFu3M" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <h3>Challenge</h3>
+                            <p>Bosch is Invented for Life, not just for labs. How can they prove they’re ready for life’s hardest curveballs?</p>
+                        </div>
+                        <div class="slide">
+                            <h3>Strategy</h3>
+                            <p>We let the internet decide the tests using Instagram polling.</p>
+                        </div>
+                        <div class="slide">
+                            <h3>Result</h3>
+                            <p>Over 50K submissions turned into real-world tests.</p>
+                        </div>
                     </div>
-                    <h3>Challenge</h3>
-                    <p>Bosch is Invented for Life, not just for labs. How can they prove they’re ready for life’s hardest curveballs?</p>
-                    <h3>Strategy & Results</h3>
-                    <p>Over 50K submissions turned into real-world tests, reaching new audiences Bosch had never engaged before.</p>
-                </div>
-                <div class="image filtered tinted" data-position="top left">
-                    <img src="images/bosch.jpg" alt="Tested by the Internet" />
                 </div>
             </section>
 
@@ -90,9 +139,22 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const carousels = document.querySelectorAll(".carousel-container");
+            carousels.forEach(carousel => {
+                let startX;
+                carousel.addEventListener("touchstart", e => {
+                    startX = e.touches[0].clientX;
+                });
+                carousel.addEventListener("touchmove", e => {
+                    let moveX = e.touches[0].clientX;
+                    let diff = startX - moveX;
+                    carousel.scrollLeft += diff * 2;
+                    startX = moveX;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
