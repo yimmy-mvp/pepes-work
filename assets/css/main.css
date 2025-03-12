@@ -72,6 +72,18 @@ input, select, textarea {
 	appearance: none;
 }
 
+.case-study {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+
 /* Page */
 
 	@-moz-keyframes load-spinner {
@@ -3558,7 +3570,7 @@ input, select, textarea {
 		-moz-flex-direction: row;
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
-		flex-direction: row;
+		flex-direction: column;
 		-moz-transition: opacity 1s ease-out, -moz-transform 0.75s ease-out;
 		-webkit-transition: opacity 1s ease-out, -webkit-transform 0.75s ease-out;
 		-ms-transition: opacity 1s ease-out, -ms-transform 0.75s ease-out;
