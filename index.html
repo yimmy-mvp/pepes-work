@@ -46,22 +46,21 @@
             scroll-snap-align: start;
         }
 
-        .carousel {
-            display: flex;
-            overflow-x: auto;
+        .carousel-container {
+            overflow: hidden;
             width: 100vw;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
+            position: relative;
         }
 
-        .carousel::-webkit-scrollbar {
-            display: none;
+        .carousel {
+            display: flex;
+            width: 300vw; /* Ensures all slides fit horizontally */
+            transition: transform 0.5s ease-in-out;
         }
 
         .slide {
             flex: none;
-            min-width: 100vw;
+            width: 100vw;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -100,6 +99,25 @@
             font-size: 3em;
             font-weight: bold;
         }
+
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 10px 20px;
+            font-size: 2em;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
     </style>
 </head>
 <body>
@@ -110,65 +128,81 @@
         </div>
 
         <!-- Case Study 1 Carousel -->
-        <div class="carousel">
-            <div class="slide">
-                <h2>See Like a Bee</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Vnza9eTTSVU" allowfullscreen></iframe>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel1">
+                <div class="slide">
+                    <h2>See Like a Bee</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Vnza9eTTSVU" allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <h2>Challenge</h2>
-                <p>Bees see flowers differently than humans. How can we help gardeners plant the most attractive flowers?</p>
-            </div>
-            <div class="slide">
-                <h2>Strategy & Results</h2>
-                <p>On World Bee Day, we created an Instagram filter simulating the bee color spectrum. Over 110K flower buyers used it.</p>
+                <div class="slide">
+                    <h2>Challenge</h2>
+                    <p>Bees see flowers differently than humans. How can we help gardeners plant the most attractive flowers?</p>
+                </div>
+                <div class="slide">
+                    <h2>Strategy & Results</h2>
+                    <p>On World Bee Day, we created an Instagram filter simulating the bee color spectrum. Over 110K flower buyers used it.</p>
+                </div>
             </div>
         </div>
 
         <!-- Case Study 2 Carousel -->
-        <div class="carousel">
-            <div class="slide">
-                <h2>Rediscover Germany</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel2">
+                <div class="slide">
+                    <h2>Rediscover Germany</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <h2>Challenge</h2>
-                <p>Summer 2020. A global pandemic disrupts global travel. Millions cancel their plans.</p>
-            </div>
-            <div class="slide">
-                <h2>Strategy & Results</h2>
-                <p>We positioned Deutsche Bahn as the best travel alternative, increasing its popularity ranking by 10 points.</p>
+                <div class="slide">
+                    <h2>Challenge</h2>
+                    <p>Summer 2020. A global pandemic disrupts global travel. Millions cancel their plans.</p>
+                </div>
+                <div class="slide">
+                    <h2>Strategy & Results</h2>
+                    <p>We positioned Deutsche Bahn as the best travel alternative, increasing its popularity ranking by 10 points.</p>
+                </div>
             </div>
         </div>
 
         <!-- Case Study 3 Carousel -->
-        <div class="carousel">
-            <div class="slide">
-                <h2>Tested by the Internet</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/oikKaTDFu3M" allowfullscreen></iframe>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel3">
+                <div class="slide">
+                    <h2>Tested by the Internet</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/oikKaTDFu3M" allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <h2>Challenge</h2>
-                <p>Bosch is Invented for Life, not just for labs. How can they prove they’re ready for life’s hardest curveballs?</p>
-            </div>
-            <div class="slide">
-                <h2>Strategy & Results</h2>
-                <p>Over 50K submissions turned into real-world tests, reaching new audiences Bosch had never engaged before.</p>
+                <div class="slide">
+                    <h2>Challenge</h2>
+                    <p>Bosch is Invented for Life, not just for labs. How can they prove they’re ready for life’s hardest curveballs?</p>
+                </div>
+                <div class="slide">
+                    <h2>Strategy & Results</h2>
+                    <p>Over 50K submissions turned into real-world tests, reaching new audiences Bosch had never engaged before.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Final CTA -->
-        <div class="section">
-            <h2>Let's Talk Strategy</h2>
-            <p>📩 Contact: your.email@example.com</p>
-            <p>💼 LinkedIn: <a href="#" style="color: yellow; font-weight: bold;">Connect Here</a></p>
-        </div>
+        <script>
+            function setupCarousel(carouselId) {
+                const carousel = document.getElementById(carouselId);
+                let index = 0;
+                function moveCarousel() {
+                    carousel.style.transform = `translateX(${-index * 100}vw)`;
+                }
+                carousel.addEventListener('touchstart', (e) => {
+                    index = (index + 1) % 3;
+                    moveCarousel();
+                });
+            }
+            setupCarousel("carousel1");
+            setupCarousel("carousel2");
+            setupCarousel("carousel3");
+        </script>
     </div>
 </body>
 </html>
