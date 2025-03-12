@@ -4,7 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pepe Sánchez - Strategist Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: black;
+            color: white;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        .portfolio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            scroll-snap-align: start;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            width: 100vw;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: none;
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .video-container {
+            width: 90vw;
+            max-width: 800px;
+            height: 50vh;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ffcc00, #ff6600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div class="portfolio-container">
@@ -18,16 +114,16 @@
             <div class="slide">
                 <h2>See Like a Bee</h2>
                 <div class="video-container">
-                    <iframe allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' frameborder='0' src="https://www.youtube.com/embed/Vnza9eTTSVU" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Vnza9eTTSVU" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="slide">
                 <h2>Challenge</h2>
-                <p class="text">Bees see flowers differently than humans. How can we help gardeners plant the most attractive flowers?</p>
+                <p>Bees see flowers differently than humans. How can we help gardeners plant the most attractive flowers?</p>
             </div>
             <div class="slide">
                 <h2>Strategy & Results</h2>
-                <p class="text">On World Bee Day, we created an Instagram filter simulating the bee color spectrum. Over 110K flower buyers used it.</p>
+                <p>On World Bee Day, we created an Instagram filter simulating the bee color spectrum. Over 110K flower buyers used it.</p>
             </div>
         </div>
 
@@ -36,16 +132,16 @@
             <div class="slide">
                 <h2>Rediscover Germany</h2>
                 <div class="video-container">
-                    <iframe allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' frameborder='0' allowfullscreen src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="slide">
                 <h2>Challenge</h2>
-                <p class="text">Summer 2020. A global pandemic disrupts global travel. Millions cancel their plans.</p>
+                <p>Summer 2020. A global pandemic disrupts global travel. Millions cancel their plans.</p>
             </div>
             <div class="slide">
                 <h2>Strategy & Results</h2>
-                <p class="text">We positioned Deutsche Bahn as the best travel alternative, increasing its popularity ranking by 10 points.</p>
+                <p>We positioned Deutsche Bahn as the best travel alternative, increasing its popularity ranking by 10 points.</p>
             </div>
         </div>
 
@@ -59,19 +155,19 @@
             </div>
             <div class="slide">
                 <h2>Challenge</h2>
-                <p class="text">Bosch is Invented for Life, not just for labs. How can they prove they’re ready for life’s hardest curveballs?</p>
+                <p>Bosch is Invented for Life, not just for labs. How can they prove they’re ready for life’s hardest curveballs?</p>
             </div>
             <div class="slide">
                 <h2>Strategy & Results</h2>
-                <p class="text">Over 50K submissions turned into real-world tests, reaching new audiences Bosch had never engaged before.</p>
+                <p>Over 50K submissions turned into real-world tests, reaching new audiences Bosch had never engaged before.</p>
             </div>
         </div>
 
         <!-- Final CTA -->
         <div class="section">
             <h2>Let's Talk Strategy</h2>
-            <p class="cta">📩 Contact: your.email@example.com</p>
-            <p class="cta">💼 LinkedIn: <a href="#" style="color: yellow; font-weight: bold;">Connect Here</a></p>
+            <p>📩 Contact: your.email@example.com</p>
+            <p>💼 LinkedIn: <a href="#" style="color: yellow; font-weight: bold;">Connect Here</a></p>
         </div>
     </div>
 </body>
