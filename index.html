@@ -1,66 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pepe Sánchez – Strategist Portfolio</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Pepe Sánchez - Strategist Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="main.css" />
+    <noscript><link rel="stylesheet" href="noscript.css" /></noscript>
 </head>
 <body>
-    <div class="slider-container">
-        <div class="slide" id="intro">
-            <h1>Why you should hire Pepe Sánchez as your new strategist?</h1>
-            <p>Swipe, and you discover a case.</p>
-            <button onclick="nextSlide()">Swipe</button>
-        </div>
+    <div id="page-wrapper">
+        <div id="wrapper">
+            <!-- Intro Panel -->
+            <section class="panel banner right">
+                <div class="content color0 span-3-75">
+                    <h1 class="major">Why you should hire Pepe Sánchez as your new strategist?</h1>
+                    <p>Swipe to discover a case.</p>
+                    <ul class="actions">
+                        <li><a href="#case1" class="button primary color1 circle icon solid fa-angle-right">Swipe</a></li>
+                    </ul>
+                </div>
+            </section>
 
-        <div class="slide" id="case1">
-            <h2>Case Study 1</h2>
-            <p>Description of the first case study, highlighting strategic insights and impact.</p>
-            <button onclick="nextSlide()">Swipe</button>
-        </div>
+            <!-- Case 1 -->
+            <section class="panel spotlight medium right" id="case1">
+                <div class="content span-7">
+                    <h2 class="major">Case Study 1</h2>
+                    <p>Description of the first case, highlighting a strategic challenge and solution.</p>
+                    <ul class="actions">
+                        <li><a href="#case2" class="button primary color1 circle icon solid fa-angle-right">Swipe</a></li>
+                    </ul>
+                </div>
+            </section>
 
-        <div class="slide" id="case2">
-            <h2>Case Study 2</h2>
-            <p>Description of the second case study, showcasing problem-solving and execution.</p>
-            <button onclick="nextSlide()">Swipe</button>
-        </div>
+            <!-- Case 2 -->
+            <section class="panel spotlight medium right" id="case2">
+                <div class="content span-7">
+                    <h2 class="major">Case Study 2</h2>
+                    <p>Description of the second case, showcasing another impactful strategy.</p>
+                    <ul class="actions">
+                        <li><a href="#case3" class="button primary color1 circle icon solid fa-angle-right">Swipe</a></li>
+                    </ul>
+                </div>
+            </section>
 
-        <div class="slide" id="case3">
-            <h2>Case Study 3</h2>
-            <p>Description of the third case study, emphasizing creative strategy and results.</p>
-            <button onclick="nextSlide()">Swipe</button>
-        </div>
+            <!-- Case 3 -->
+            <section class="panel spotlight medium right" id="case3">
+                <div class="content span-7">
+                    <h2 class="major">Case Study 3</h2>
+                    <p>Description of the third case, demonstrating strategic thinking in action.</p>
+                    <ul class="actions">
+                        <li><a href="#contact" class="button primary color1 circle icon solid fa-angle-right">Swipe</a></li>
+                    </ul>
+                </div>
+            </section>
 
-        <div class="slide" id="contact">
-            <h2>Pepe Sánchez</h2>
-            <p>Strategist | Creative Thinker | Problem Solver</p>
-            <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-            <button onclick="restartSlider()">Start Over</button>
+            <!-- Contact -->
+            <section class="panel color4-alt" id="contact">
+                <div class="intro color4">
+                    <h2 class="major">Contact Pepe Sánchez</h2>
+                    <p>Get in touch for strategic collaborations.</p>
+                    <ul class="contact-icons color1">
+                        <li><a href="mailto:your.email@example.com" class="icon fa-envelope"> Email</a></li>
+                        <li><a href="https://linkedin.com/in/yourprofile" class="icon brands fa-linkedin"> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </section>
         </div>
     </div>
 
-    <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll(".slide");
-        
-        function nextSlide() {
-            slides[currentIndex].style.display = "none";
-            currentIndex = (currentIndex + 1) % slides.length;
-            slides[currentIndex].style.display = "block";
-        }
-        
-        function restartSlider() {
-            slides[currentIndex].style.display = "none";
-            currentIndex = 0;
-            slides[currentIndex].style.display = "block";
-        }
-        
-        window.onload = () => {
-            slides.forEach((slide, index) => {
-                if (index !== 0) slide.style.display = "none";
-            });
-        };
-    </script>
+    <script src="jquery.min.js"></script>
+    <script src="browser.min.js"></script>
+    <script src="breakpoints.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
