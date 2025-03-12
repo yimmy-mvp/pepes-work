@@ -1,79 +1,66 @@
-<!DOCTYPE HTML>
-<!--
-    Adapted from Ethereal by HTML5 UP
-    Portfolio for Pepe Sánchez - Styled like an Instagram feed
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Pepe Sánchez - Strategist Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepe Sánchez – Strategist Portfolio</title>
+    <link rel="stylesheet" href="main.css">
 </head>
-<body class="is-preload">
-    <div id="page-wrapper">
-        <div id="wrapper">
-            <!-- Intro Panel -->
-            <section class="panel banner right">
-                <div class="content color0 span-3-75">
-                    <h1 class="major">Why Hire Pepe Sánchez?</h1>
-                    <p>Scroll down to explore each case study.</p>
-                </div>
-            </section>
+<body>
+    <div class="slider-container">
+        <div class="slide" id="intro">
+            <h1>Why you should hire Pepe Sánchez as your new strategist?</h1>
+            <p>Swipe, and you discover a case.</p>
+            <button onclick="nextSlide()">Swipe</button>
+        </div>
 
-            <!-- Case Study 1 -->
-            <section class="panel case-study" id="case1">
-                <h2>See Like a Bee</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Vnza9eTTSVU" allowfullscreen></iframe>
-                </div>
-                <h3>Challenge</h3>
-                <p>Bees see flowers differently than humans. How can we help gardeners plant the most attractive flowers?</p>
-                <h3>Strategy</h3>
-                <p>On World Bee Day, we created an Instagram filter simulating the color spectrum visible to bees. Gardeners could switch it on to identify the most attractive colors and help bees find their way to their gardens.</p>
-                <h3>Result</h3>
-                <p>More than 110K flower buyers used the filter to identify the best colors for bees.</p>
-            </section>
+        <div class="slide" id="case1">
+            <h2>Case Study 1</h2>
+            <p>Description of the first case study, highlighting strategic insights and impact.</p>
+            <button onclick="nextSlide()">Swipe</button>
+        </div>
 
-            <!-- Case Study 2 -->
-            <section class="panel case-study" id="case2">
-                <h2>Rediscover Germany</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
-                </div>
-                <h3>Challenge</h3>
-                <p>Summer 2020. A global pandemic disrupts international travel. Millions cancel their plans.</p>
-                <h3>Strategy</h3>
-                <p>We reminded travelers that they could stay in Germany and get experiences similar to international destinations—all within a short train ride.</p>
-                <h3>Result</h3>
-                <p>Deutsche Bahn gained the top place with +10 points on the most popular brand rankings.</p>
-            </section>
+        <div class="slide" id="case2">
+            <h2>Case Study 2</h2>
+            <p>Description of the second case study, showcasing problem-solving and execution.</p>
+            <button onclick="nextSlide()">Swipe</button>
+        </div>
 
-            <!-- Case Study 3 -->
-            <section class="panel case-study" id="case3">
-                <h2>Tested by the Internet</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/oikKaTDFu3M" allowfullscreen></iframe>
-                </div>
-                <h3>Challenge</h3>
-                <p>Bosch is Invented for Life, not just for labs. How can they prove to their community that they're ready for life's hardest curveballs?</p>
-                <h3>Strategy</h3>
-                <p>We let the internet decide how to test our products using Instagram's polling function.</p>
-                <h3>Result</h3>
-                <p>More than 50,000 submissions turned into real-world challenges for our tools, reaching target groups that Bosch had never reached before.</p>
-            </section>
+        <div class="slide" id="case3">
+            <h2>Case Study 3</h2>
+            <p>Description of the third case study, emphasizing creative strategy and results.</p>
+            <button onclick="nextSlide()">Swipe</button>
+        </div>
 
-            <!-- Contact Panel -->
-            <section class="panel case-study contact-panel">
-                <h2>Let's Talk Strategy</h2>
-                <p>📩 Contact: your.email@example.com</p>
-                <p>💼 LinkedIn: <a href="#">Connect Here</a></p>
-            </section>
-
-            <!-- Copyright -->
-            <div class="copyright">&copy; Pepe Sánchez. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</div>
+        <div class="slide" id="contact">
+            <h2>Pepe Sánchez</h2>
+            <p>Strategist | Creative Thinker | Problem Solver</p>
+            <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <button onclick="restartSlider()">Start Over</button>
         </div>
     </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        
+        function nextSlide() {
+            slides[currentIndex].style.display = "none";
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].style.display = "block";
+        }
+        
+        function restartSlider() {
+            slides[currentIndex].style.display = "none";
+            currentIndex = 0;
+            slides[currentIndex].style.display = "block";
+        }
+        
+        window.onload = () => {
+            slides.forEach((slide, index) => {
+                if (index !== 0) slide.style.display = "none";
+            });
+        };
+    </script>
 </body>
 </html>
