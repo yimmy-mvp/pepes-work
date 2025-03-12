@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pepe Sánchez - Strategist Portfolio</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .carousel-container {
+            overflow: hidden;
+            width: 100vw;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: none;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px 20px;
+            font-size: 2em;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
     <div class="portfolio-container">
@@ -17,6 +57,7 @@
         <section class="case-study">
             <h2>See Like a Bee</h2>
             <div class="carousel-container">
+                <button class="nav-button" onclick="moveCarousel('carousel1', -1)">⬅</button>
                 <div class="carousel" id="carousel1">
                     <div class="slide">
                         <div class="video-container">
@@ -32,50 +73,7 @@
                         <p>On World Bee Day, we created an Instagram filter simulating the bee color spectrum. Over 110K flower buyers used it.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Case Study 2 -->
-        <section class="case-study">
-            <h2>Rediscover Germany</h2>
-            <div class="carousel-container">
-                <div class="carousel" id="carousel2">
-                    <div class="slide">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/v-P8TUgfM6w" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <h3>Challenge</h3>
-                        <p>Summer 2020. A global pandemic disrupts global travel. Millions cancel their plans.</p>
-                    </div>
-                    <div class="slide">
-                        <h3>Strategy & Results</h3>
-                        <p>We positioned Deutsche Bahn as the best travel alternative, increasing its popularity ranking by 10 points.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Case Study 3 -->
-        <section class="case-study">
-            <h2>Tested by the Internet</h2>
-            <div class="carousel-container">
-                <div class="carousel" id="carousel3">
-                    <div class="slide">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/oikKaTDFu3M" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <h3>Challenge</h3>
-                        <p>Bosch is Invented for Life, not just for labs. How can they prove they’re ready for life’s hardest curveballs?</p>
-                    </div>
-                    <div class="slide">
-                        <h3>Strategy & Results</h3>
-                        <p>Over 50K submissions turned into real-world tests, reaching new audiences Bosch had never engaged before.</p>
-                    </div>
-                </div>
+                <button class="nav-button" onclick="moveCarousel('carousel1', 1)">➡</button>
             </div>
         </section>
 
@@ -87,22 +85,14 @@
     </div>
 
     <script>
-        function setupCarousel(carouselId) {
+        function moveCarousel(carouselId, direction) {
             const carousel = document.getElementById(carouselId);
-            let index = 0;
-            function moveCarousel(direction) {
-                const totalSlides = carousel.children.length;
-                index = (index + direction + totalSlides) % totalSlides;
-                carousel.style.transform = `translateX(${-index * 100}vw)`;
-            }
-            carousel.addEventListener('touchstart', (e) => {
-                index = (index + 1) % 3;
-                moveCarousel(1);
-            });
+            let index = parseInt(carousel.getAttribute("data-index")) || 0;
+            const totalSlides = carousel.children.length;
+            index = (index + direction + totalSlides) % totalSlides;
+            carousel.style.transform = `translateX(${-index * 100}vw)`;
+            carousel.setAttribute("data-index", index);
         }
-        setupCarousel("carousel1");
-        setupCarousel("carousel2");
-        setupCarousel("carousel3");
     </script>
 </body>
 </html>
